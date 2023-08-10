@@ -13,5 +13,31 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 def ping_pong():
     return jsonify('pong!')
 
+@app.route('/books', methods=['GET'])
+def all_books():
+    return jsonify({
+        'status': 'success',
+        'books': BOOKS
+    })
+
 if __name__ == '__main__':
     app.run()
+
+BOOKS = [
+    {
+        'title': 'On the Road',
+        'author': 'Jack Kerouac',
+        'read': True,
+    },
+        {
+        'title': 'Harry Potter and the Philosoph\'s Stone',
+        'author': 'J. K. Rowling',
+        'read': True,
+    },
+    {
+        'title': 'Lord of the Rings: The Hobbit',
+        'author': 'J. R. R. Tolkien',
+        'read': True,
+    },
+]
+
