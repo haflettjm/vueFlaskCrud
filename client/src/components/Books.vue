@@ -37,7 +37,13 @@
                       @click="toggleEditBookModal(book)">
                       Update
                     </button>
-                    <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-sm"
+                      @click="handleDeleteBook(book)">
+                      Delete
+                    </button>
+
                   </div>
                 </td>
               </tr>
