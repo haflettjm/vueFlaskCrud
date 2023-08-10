@@ -319,6 +319,22 @@
         this.initForm();
         this.getBooks(); // why?
       },
+      handleDeleteBook(book) {
+        this.removeBook(book.id);
+      },
+      removeBook(bookID) {
+        const path = `http://localhost:5001/books/${bookID}`;
+        axios.delete(path)
+          .then(() => {
+            this.getBooks();
+            this.message = 'Book removed!';
+            this.showMessage = true;
+          })
+          .catch((error) => {
+            console.error(error);
+            this.getBooks();
+          });
+      },
     },
     created() {
       this.getBooks();
