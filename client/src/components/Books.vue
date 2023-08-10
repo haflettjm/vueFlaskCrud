@@ -245,7 +245,7 @@
           });
       },
       updateBook(payload, bookID) {
-        const path = `http://localhost:5001/books/${bookID}`;
+        const path = `http://localhost:3001/books/${bookID}`;
         axios.put(path, payload)
           .then(() => {
             this.getBooks();
@@ -323,7 +323,7 @@
         this.removeBook(book.id);
       },
       removeBook(bookID) {
-        const path = `http://localhost:5001/books/${bookID}`;
+        const path = `http://localhost:3001/books/${bookID}`;
         axios.delete(path)
           .then(() => {
             this.getBooks();
