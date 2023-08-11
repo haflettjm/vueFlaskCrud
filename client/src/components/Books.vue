@@ -8,7 +8,7 @@
           <button
             type="button"
             class="btn btn-success btn-sm"
-            @click="toggleAddBookModal">
+            @click="toggleAddBookModal()">
             Add Book
           </button>
           <br><br>
@@ -199,6 +199,7 @@
   export default {
     data() {
       return {
+        activeAddBookModal: false,
         activeEditBookModal: false,
         editBookForm: {
           id: '',
@@ -279,11 +280,10 @@
         this.addBookForm.read = [];
         this.editBookForm.id = '';
         this.editBookForm.title = '';
-        this.editBookForm.author = '';
-        this.editBookForm.read = [];
       },
       toggleAddBookModal() {
         const body = document.querySelector('body');
+        console.log('Add Book Fired')
         this.activeAddBookModal = !this.activeAddBookModal;
         if (this.activeAddBookModal) {
           body.classList.add('modal-open');
